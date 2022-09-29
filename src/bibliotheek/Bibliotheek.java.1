@@ -1,0 +1,65 @@
+import java.util.ArrayList;
+
+public class Bibliotheek {
+
+    private ArrayList<Exemplaar> boekenLijst;
+
+    Bibliotheek(String naam) {
+        System.out.println(naam + " is geopend!");
+        boekenLijst = new ArrayList<Exemplaar>();
+    }
+
+    private Exemplaar Findboek(Boek boek) {
+        int i;
+        Exemplaar e;
+        for (i = 0; i < boekenLijst.size(); i++) {
+            e = boekenLijst.get(i);
+            if (e.boek.titel == boek.titel) {
+                if (e.boek.auteur.naam == boek.auteur.naam) {
+                    if (e.boek.taal == boek.taal)
+                        return e;
+                }
+            }
+        }
+        return null;
+    }
+
+    public void voegToe(Boek boek) {
+        Exemplaar exemplaar = Findboek(boek);
+        if (exemplaar == null) {
+            exemplaar = new Exemplaar(boek);
+        } else {
+            exemplaar = new Exemplaar(exemplaar);
+        }
+
+        boekenLijst.add(exemplaar);
+    }
+
+    public void voegToe(Boek boek, int aantal) {
+        int i;
+
+        for (i = 0; i < aantal; i++) {
+            voegToe(boek);
+        }
+    }
+
+    public void toonCollectie(String taal) {
+        int i; 
+
+        for (i = 0; i < boekenLijst.size(); i++) {
+            // checken of naam, taal en auteur boek al bestaat in de boekenlijst
+            if (boekenLijst.get(i).boek.taal.equals(taal)) {
+                System.out.println(boekenLijst.get(i).boek.titel);
+            }
+        }
+    }
+
+    public void toonCollectie() {
+        int i; 
+
+        for (i = 0; i < boekenLijst.size(); i++) {
+            // checken of naam, taal en auteur boek al bestaat in de boekenlijst
+            System.out.println(boekenLijst.get(i).boek.titel);
+        }
+    }
+}
