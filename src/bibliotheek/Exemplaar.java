@@ -1,62 +1,24 @@
 package bibliotheek;
 
 public class Exemplaar {
-    private String exemplaarInfo;
-    private String kopieExemplaarInfo;
-    private Exemplaar referentieExemplaar = null;
-    Boek referentieBoek;
+    public Boek boek;
 
-    public Exemplaar(Boek referentieBoek) {
-        this.referentieBoek = referentieBoek;
-        String strReferentieBoek = referentieBoek.print();
-        exemplaarInfo = "nieuw exemplaar -> " + " " + strReferentieBoek;
-        System.out.println(exemplaarInfo);
+    /// Voeg een nieuw boek toe
+    public Exemplaar(Boek boek) {
+        this.boek = boek;
+        System.out.println("nieuw exemplaar -> " + boek.titel + " van " + boek.auteur.naam + " in het " + boek.taal);
     }
 
-    public Exemplaar(Exemplaar referentieExemplaar) {
-        this.referentieExemplaar = referentieExemplaar;
-        String exemplaarInfo = referentieExemplaar.print();
-        kopieExemplaarInfo = "Kopie van exemplaar -> " + " " + exemplaarInfo;
-        System.out.println(kopieExemplaarInfo);
+    // Voeg een bestaand boek toe
+    public Exemplaar(Exemplaar exemplaar) {
+        boek = exemplaar.boek;
+        System.out.println("kopie van exemplaar -> " + boek.titel + " van " + boek.auteur.naam + " in het " + boek.taal);
     }
 
     public String print() {
-        // Geeft de gegevens van het boek terug
-        String strBoekGegevens = "exemplaar -> " + " " + exemplaarInfo;
+        String strBoekGegevens = "exemplaar -> " + boek.titel + " van " + boek.auteur.naam + " in het " + boek.taal;
         System.out.println(strBoekGegevens);
         return strBoekGegevens;
     }
-
-    // voor het ophalen van gegevens van de klasse exemplaar.
-    public String getExemplaarInfo() {
-        return exemplaarInfo;
-    }
-
-    public void setExemplaarInfo(String exemplaarInfo) {
-        this.exemplaarInfo = exemplaarInfo;
-    }
-
-    public String getKopieExemplaarInfo() {
-        return kopieExemplaarInfo;
-    }
-
-    public void setKopieExemplaarInfo(String kopieExemplaarInfo) {
-        this.kopieExemplaarInfo = kopieExemplaarInfo;
-    }
-
-    public Exemplaar getReferentieExemplaar() {
-        return referentieExemplaar;
-    }
-
-    public void setReferentieExemplaar(Exemplaar referentieExemplaar) {
-        this.referentieExemplaar = referentieExemplaar;
-    }
-
-    public Boek getReferentieBoek() {
-        return referentieBoek;
-    }
-
-    public void setReferentieBoek(Boek referentieBoek) {
-        this.referentieBoek = referentieBoek;
-    }
 }
+
