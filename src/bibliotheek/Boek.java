@@ -17,10 +17,9 @@ public class Boek {
         taal = "Nederlands";
     }
 
-    public String print() {
+    public void print() {
         // Geeft de gegevens van het boek terug
-        String strBoekGegevens = titel + " van " + auteur.naam + " in het " + taal;
-        System.out.println(strBoekGegevens);
-        return strBoekGegevens;
+        String boekGegevens = titel + " van " + auteur.naam + " in het " + taal;
+        System.out.println(boekGegevens);
     }
 }

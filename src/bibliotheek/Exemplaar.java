@@ -15,10 +15,9 @@ public class Exemplaar {
         System.out.println("kopie van exemplaar -> " + boek.titel + " van " + boek.auteur.naam + " in het " + boek.taal);
     }
 
-    public String print() {
-        String strBoekGegevens = "exemplaar -> " + boek.titel + " van " + boek.auteur.naam + " in het " + boek.taal;
-        System.out.println(strBoekGegevens);
-        return strBoekGegevens;
+    public void print() {
+        String boekGegevens = "exemplaar -> " + boek.titel + " van " + boek.auteur.naam + " in het " + boek.taal;
+        System.out.println(boekGegevens);
     }
 }
 

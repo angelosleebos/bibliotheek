@@ -50,8 +50,8 @@ public class Bibliotheek {
         Boek boek;
 
         for (i = 0; i < boekenLijst.size(); i++) {
+            boek = boekenLijst.get(i).boek;
             if (boekenLijst.get(i).boek.taal.equals(taal)) {
-                boek = boekenLijst.get(i).boek;
                 System.out.println("exemplaar -> " + boek.titel + " van " + boek.auteur.naam + " in het " + boek.taal);
             }
         }
@@ -81,8 +81,6 @@ public class Bibliotheek {
     public void printAuteurs(boolean heeftPrijsGewonnen) {
         for (int i = 0; i < boekenLijst.size(); i++) {
             if (boekenLijst.get(i).boek.auteur.prijs.equals(heeftPrijsGewonnen)) {
-                System.out.println(boekenLijst.get(i).boek.auteur.naam);
-            } else if (boekenLijst.get(i).boek.auteur.prijs.equals(heeftPrijsGewonnen)) {
                 System.out.println(boekenLijst.get(i).boek.auteur.naam);
             }
         }
