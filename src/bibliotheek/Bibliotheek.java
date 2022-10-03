@@ -2,6 +2,9 @@ package bibliotheek;
 
 import java.util.ArrayList;
 
+/*
+ * Deze klasse representeert een Bibliotheek object, 
+ */
 public class Bibliotheek {
 
     private ArrayList<Exemplaar> boekenLijst;
@@ -11,6 +14,12 @@ public class Bibliotheek {
         boekenLijst = new ArrayList<Exemplaar>();
     }
 
+    
+    /** 
+     * Hulp methode voor het zoeken vaan een boek binnen de Bibliotheek arraylist
+     * @param boek Boek object waarop de zoekopdracht uitgevoerd wordt
+     * @return Exemplaar geeft een Exemplaar object terug.
+     */
     private Exemplaar findBoek(Boek boek) {
         int i;
         Exemplaar e;
@@ -26,6 +35,11 @@ public class Bibliotheek {
         return null;
     }
 
+    
+    /** 
+     * Methode voor het toevoegen van een boek aan de boekenlijst 
+     * @param boek Het toe te voegen boek object als parameter
+     */
     public void voegToe(Boek boek) {
         Exemplaar exemplaar = findBoek(boek);
         if (exemplaar == null) {
@@ -37,6 +51,12 @@ public class Bibliotheek {
         boekenLijst.add(exemplaar);
     }
 
+    
+    /** 
+     * Methode voor het toevoegen van een boek met verschillende aantallen van hetzelfde boek
+     * @param boek Het toe te voegen boek object als parameter
+     * @param aantal Het aantal boeken welke toegevoegd gaat worden aan de bibliotheek
+     */
     public void voegToe(Boek boek, int aantal) {
         int i;
 
@@ -45,6 +65,11 @@ public class Bibliotheek {
         }
     }
 
+    
+    /** 
+     * Methode voor het printen van alle exemplaren uit de bibliotheek waarvan de taal als zoekwoord wordt gebruikt
+     * @param taal Taal parameter van het boek, default is Nederlands
+     */
     public void toonCollectie(String taal) {
         int i;
         Boek boek;
@@ -57,6 +82,9 @@ public class Bibliotheek {
         }
     }
 
+    /**
+     * Methode voor het tonen van alle boeken uit de boekenlijst
+     */
     public void toonCollectie() {
         int i;
         Boek boek;
@@ -67,6 +95,12 @@ public class Bibliotheek {
         }
     }
 
+    
+    /** 
+     * Methode voor het tellen van de exemplaren van een bepaald boek object
+     * @param boek Als parameter van deze methode wordt een boek object meegegeven
+     * @return String Het aantal getelde boeken terug gegeven als String 
+     */
     public String telExemplaren(Boek boek) {
         int aantal = 0;
         for (int i = 0; i < boekenLijst.size(); i++) {
@@ -78,6 +112,11 @@ public class Bibliotheek {
         return s;
     }
 
+    
+    /** 
+     * Methode voor het printen van alle auteurs met wel of niet een prijs op zak 
+     * @param heeftPrijsGewonnen Met als parameter een booblean heeft prijs gewonnen
+     */
     public void printAuteurs(boolean heeftPrijsGewonnen) {
         for (int i = 0; i < boekenLijst.size(); i++) {
             if (boekenLijst.get(i).boek.auteur.prijs.equals(heeftPrijsGewonnen)) {
