@@ -24,6 +24,7 @@ public class Biblio {
     bieb.voegToe(b4);
     bieb.voegToe(b5, 2);
     bieb.voegToe(b3);
+    // bieb.voegToe(b6,10);
 
     System.out.println();
     System.out.println("Het assortiment van de bibliotheek bestaat uit:");
@@ -38,11 +39,11 @@ public class Biblio {
     System.out.println("Auteurs met een prijs zijn:");
     bieb.printAuteurs(true);
     System.out.println();
-    System.out.print("Er zijn " + bieb.telExemplaren(b1) + " exemplaren van ");
+    System.out.print("Er zijn " + bieb.telExemplaren1(b1) + " exemplaren van ");
     b1.print();
-    System.out.print("Er zijn " + bieb.telExemplaren(b5) + " exemplaren van ");
+    System.out.print("Er zijn " + bieb.telExemplaren2(b5) + " exemplaren van ");
     b5.print();
-    System.out.print("Er zijn " + bieb.telExemplaren(b6) + " exemplaren van ");
+    System.out.print("Er zijn " + bieb.telExemplaren3(b6) + " exemplaren van ");
     b6.print();
   }
 

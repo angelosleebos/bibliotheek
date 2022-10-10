@@ -1,7 +1,7 @@
 package bibliotheek;
 
 /*
- * Klasse voor het aanmaken van een nieuw boek object 
+ * Klasse die gegevens van een boek beheert.  
  */
 public class Boek {
     private String titel;
