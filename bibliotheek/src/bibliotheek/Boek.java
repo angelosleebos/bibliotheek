@@ -8,12 +8,11 @@ public class Boek {
     private String taal;
     private Auteur auteur;
 
-
-
     /**
      * Constructor voor een nieuw boek object waarvan de Taal bekend is
-     * @param titel De titel van het boek
-     * @param taal De taal van het boek
+     * 
+     * @param titel  De titel van het boek
+     * @param taal   De taal van het boek
      * @param auteur De auteur van het boek
      */
     public Boek(String titel, String taal, Auteur auteur) {
@@ -24,7 +23,8 @@ public class Boek {
 
     /**
      * Constructor voor een nieuw boek waarvan de Taal niet bekend is
-     * @param titel De titel van het boek
+     * 
+     * @param titel  De titel van het boek
      * @param auteur De auteur van het boek
      */
     public Boek(String titel, Auteur auteur) {

@@ -10,7 +10,7 @@ public class Bibliotheek {
     private ArrayList<Exemplaar> boekenLijst;
 
     // public ArrayList<Exemplaar> getBoekenLijst() {
-    //     return boekenLijst;
+    // return boekenLijst;
     // }
 
     public Bibliotheek(String naam) {
@@ -38,7 +38,8 @@ public class Bibliotheek {
         return null;
     }
 
-    // findboek wordt telkens opnieuw aangevraagd voor hetzelfde boek bij meedere aantallen
+    // findboek wordt telkens opnieuw aangevraagd voor hetzelfde boek bij meedere
+    // aantallen
     private Exemplaar createExemplaar(Boek boek) {
         Exemplaar exemplaar = findBoek(boek);
         if (exemplaar == null) {
@@ -49,22 +50,7 @@ public class Bibliotheek {
         return exemplaar;
     }
 
-    // TODO:  Kan ik van bovenstaande methode 1 methode van maken?
-    /*   
-    private Exemplaar createExemplaar(Boek boek){
-        Exemplaar exemplaar; 
-        if (exemplaar == null) {
-            exemplaar = new Exemplaar(boek);
-        } else {
-            exemplaar = new Exemplaar(exemplaar);
-        }
-        return exemplaar;
-    
-
-        return null;
-
-    }
-    */
+    // TODO: Kan ik van bovenstaande methode 1 methode van maken?
 
     /**
      * Methode voor het toevoegen van een boek aan de boekenlijst
@@ -96,7 +82,7 @@ public class Bibliotheek {
      * @param taal Taal parameter van het boek, default is Nederlands
      */
     public void toonCollectie(String taal) {
-        for (Exemplaar e : boekenLijst  ) {
+        for (Exemplaar e : boekenLijst) {
             if (e.getBoek().getTaal().equals(taal)) {
                 System.out.print("exemplaar -> ");
                 e.getBoek().print();
@@ -111,7 +97,7 @@ public class Bibliotheek {
         for (Exemplaar e : boekenLijst) {
             System.out.print("exemplaar -> ");
             e.getBoek().print();
-        }   
+        }
     }
 
     /**
@@ -189,17 +175,17 @@ public class Bibliotheek {
      * @param heeftPrijsGewonnen Met als parameter een booblean heeft prijs gewonnen
      */
     public void printAuteurs(boolean heeftPrijsGewonnen) {
-        for (int i = 0; i < boekenLijst.size(); i++) {
-            if (boekenLijst.get(i).getBoek().getAuteur().getPrijs() == heeftPrijsGewonnen) {
-                System.out.println(boekenLijst.get(i).getBoek().getAuteur().getNaam());
+        for (Exemplaar e : boekenLijst) {
+            if (e.getBoek().getAuteur().getPrijs().equals(heeftPrijsGewonnen)) {
+                System.out.println(e.getBoek().getAuteur().getNaam());
             }
         }
     }
 
     public void printAuteurs() {
-        for (int i = 0; i < boekenLijst.size(); i++) {
-            if (boekenLijst.get(i).getBoek().getAuteur().getPrijs() == true) {
-                System.out.println(boekenLijst.get(i).getBoek().getAuteur().getNaam());
+        for (Exemplaar e : boekenLijst) {
+            if (e.getBoek().getAuteur().getPrijs().equals(true)) {
+                System.out.println(e.getBoek().getAuteur().getNaam());
             }
         }
     }

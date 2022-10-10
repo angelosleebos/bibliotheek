@@ -8,8 +8,10 @@ public class Auteur {
     private Boolean prijs;
 
     /**
-     * Auteur constructor waarvan de naam en of deze wel of geen prijs heeft gewonnen wordt bijgehouden
-     * @param naam Naam van de auteur
+     * Auteur constructor waarvan de naam en of deze wel of geen prijs heeft
+     * gewonnen wordt bijgehouden
+     * 
+     * @param naam  Naam van de auteur
      * @param prijs Wel of niet in het bezit van een boeken prijs
      */
     public Auteur(String naam, Boolean prijs) {
@@ -25,4 +27,3 @@ public class Auteur {
         return prijs;
     }
 }
-
