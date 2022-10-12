@@ -4,7 +4,7 @@ package bibliotheek;
  * Klasse voor het maken van een nieuw of kopie van een exemplaar
  */
 public class Exemplaar {
-    private Boek boek;
+    private Boek boek = null;
 
     /**
      * Constructor voor het maken van een nieuw exemplaar op basis van een boek

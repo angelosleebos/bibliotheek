@@ -4,9 +4,9 @@ package bibliotheek;
  * Klasse die gegevens van een boek beheert.  
  */
 public class Boek {
-    private String titel;
-    private String taal;
-    private Auteur auteur;
+    private String titel = null;
+    private String taal = null;
+    private Auteur auteur = null;
 
     /**
      * Constructor voor een nieuw boek object waarvan de Taal bekend is

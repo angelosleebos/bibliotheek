@@ -4,8 +4,8 @@ package bibliotheek;
  * Auteur klasse voor het aanmaken van een nieuwe auteur
  */
 public class Auteur {
-    private String naam;
-    private Boolean prijs;
+    private String naam = null;
+    private Boolean prijs = null;
 
     /**
      * Auteur constructor waarvan de naam en of deze wel of geen prijs heeft
