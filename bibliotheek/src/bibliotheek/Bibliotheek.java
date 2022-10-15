@@ -1,5 +1,4 @@
 package bibliotheek;
-
 import java.util.ArrayList;
 
 /*
@@ -9,6 +8,11 @@ public class Bibliotheek {
 
     private ArrayList<Exemplaar> boekenlijst = new ArrayList<>();
 
+    
+    /**
+     * Bibliotheek constructor 
+     * @param naam van de Bibliotheek
+     */
     public Bibliotheek(String naam) {
         System.out.println(naam + " is geopend!");
     }
@@ -47,21 +51,36 @@ public class Bibliotheek {
      */
     private Exemplaar createExemplaar(Boek boek) {
         Exemplaar exemplaar = null;
-
-        // Controleert of een boek al bestaat in de boekenlijst
-        for (Exemplaar e : boekenlijst) {
-            Boek gevondenBoek = e.getBoek();
-            if (gevondenBoek.equals(boek)) {
-                exemplaar = e;
-            }
-        }
-        // Creert een nieuw Exemplaar op basis van een Boek of Exemplaar object
-        if (exemplaar == null) {
+        Exemplaar gevondenExemplaar = findBoek(boek); 
+    
+        // Creëert een nieuw Exemplaar op basis van een Boek of Exemplaar object
+        if (gevondenExemplaar == null) {
             exemplaar = new Exemplaar(boek);
         } else {
-            exemplaar = new Exemplaar(exemplaar);
+            exemplaar = new Exemplaar(gevondenExemplaar);
         }
         return exemplaar;
+    }
+
+    private Exemplaar findBoek(Boek boek) {
+        Boek gevondenBoek = null;
+        Exemplaar gevondenExemplaar = null;
+
+        String titel = boek.getTitel();
+        String taal = boek.getTaal();
+        Auteur auteur = boek.getAuteur();
+
+        for (Exemplaar e : boekenlijst) {
+            gevondenBoek = e.getBoek();
+            if (gevondenBoek.getTitel().equals(titel)) {
+                if (gevondenBoek.getTaal().equals(taal)) {
+                    if (gevondenBoek.getAuteur().equals(auteur)) {
+                        gevondenExemplaar = e;
+                    }
+                }
+            }
+        }
+        return gevondenExemplaar;
     }
 
     /**
@@ -99,7 +118,7 @@ public class Bibliotheek {
 
     // TODO: Welke van de onderstaande 3 oplossingen zijn het beste
 
-    public int telExemplaren1(Boek boek) {
+    public int telExemplaren(Boek boek) {
         int aantal = 0;
         Boek gevondenBoek = null;
         String titel = boek.getTitel();
@@ -114,48 +133,6 @@ public class Bibliotheek {
                         aantal++;
                     }
                 }
-            }
-        }
-        return aantal;
-    }
-
-    public int telExemplaren2(Boek boek) {
-        int aantal = 0;
-        Boek gevondenBoek = null;
-        // b = findBoek(boek).getBoek();
-        for (Exemplaar e : boekenlijst) {
-            gevondenBoek = e.getBoek();
-            if (gevondenBoek.equals(boek)) {
-                gevondenBoek = boek;
-            }
-        }
-        // TODO: Werkt dit ook als de exemplaren niet op volgorde zijn
-        if (gevondenBoek != null) {
-            for (Exemplaar e : boekenlijst) {
-                gevondenBoek = e.getBoek();
-                String titel = gevondenBoek.getTitel();
-                String taal = gevondenBoek.getTaal();
-                Auteur auteur = gevondenBoek.getAuteur();
-                if (titel.equals(boek.getTitel())) {
-                    if (taal.equals(boek.getTaal())) {
-                        if (auteur.equals(boek.getAuteur())) {
-                            aantal++;
-                        }
-                    }
-                }
-            }
-        }
-        return aantal;
-    }
-
-    // TODO: Dit werkt volgens mij ook prima, de docent vond van niet?
-    public int telExemplaren3(Boek boek) {
-        int aantal = 0;
-        Boek gevondenBoek = null;
-        for (Exemplaar e : boekenlijst) {
-            gevondenBoek = e.getBoek();
-            if (gevondenBoek.equals(boek)) {
-                aantal++;
             }
         }
         return aantal;
