@@ -1,4 +1,5 @@
 package bibliotheek;
+
 import java.util.ArrayList;
 
 /*
@@ -8,9 +9,9 @@ public class Bibliotheek {
 
     private ArrayList<Exemplaar> boekenlijst = new ArrayList<>();
 
-    
     /**
-     * Bibliotheek constructor 
+     * Bibliotheek constructor
+     * 
      * @param naam van de Bibliotheek
      */
     public Bibliotheek(String naam) {
@@ -51,8 +52,8 @@ public class Bibliotheek {
      */
     private Exemplaar createExemplaar(Boek boek) {
         Exemplaar exemplaar = null;
-        Exemplaar gevondenExemplaar = findBoek(boek); 
-    
+        Exemplaar gevondenExemplaar = findBoek(boek);
+
         // Creëert een nieuw Exemplaar op basis van een Boek of Exemplaar object
         if (gevondenExemplaar == null) {
             exemplaar = new Exemplaar(boek);
@@ -62,6 +63,12 @@ public class Bibliotheek {
         return exemplaar;
     }
 
+    /**
+     * Hulpmethode voor het vinden van een boek in de boekenlijst
+     * 
+     * @param boek het boek wat opgezocht diend te worden
+     * @return gevondenExemplaar Het exemplaar dat is gevonden in de boekenlijst
+     */
     private Exemplaar findBoek(Boek boek) {
         Boek gevondenBoek = null;
         Exemplaar gevondenExemplaar = null;
@@ -115,8 +122,6 @@ public class Bibliotheek {
      * @param boek boek parameter van deze methode wordt een boek object meegegeven
      * @return int aantal boeken
      */
-
-    // TODO: Welke van de onderstaande 3 oplossingen zijn het beste
 
     public int telExemplaren(Boek boek) {
         int aantal = 0;
