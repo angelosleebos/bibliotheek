@@ -32,7 +32,7 @@ public class Bibliotheek {
      * Methode voor het toevoegen van een boek met verschillende aantallen van
      * hetzelfde boek
      * 
-     * @param boek   Het toe te voegen boek object als parameter
+     * @param boek   Het toe te voegen boek object
      * @param aantal Het aantal boeken welke toegevoegd gaat worden aan de
      *               bibliotheek
      */
