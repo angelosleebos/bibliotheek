@@ -11,11 +11,6 @@ public class Exemplaar {
      * 
      * @param boek Boek object
      */
-    // public Exemplaar(Boek boek) {
-    // this.boek = boek;
-    // System.out.println("nieuw exemplaar -> " + boek.getTitel() + " van " +
-    // boek.getAuteur().getNaam() + " in het " + boek.getTaal());
-    // }
     public Exemplaar(Boek boek) {
         this.boek = boek;
         System.out.print("nieuw exemplaar -> ");
@@ -37,12 +32,14 @@ public class Exemplaar {
      * Methode voor het printen van de exemplaar gegevens
      */
     public void print() {
-        // String boekGegevens = "exemplaar -> " + boek.getTitel() + " van " +
-        // boek.getAuteur().getNaam() + " in het " + boek.getTaal();
         System.out.print("exemplaar -> ");
         boek.print();
     }
 
+    /**
+     * Methode voor het opvragen van het Boek
+     * @return Boek boek van het exemplaar
+     */
     public Boek getBoek() {
         return boek;
     }

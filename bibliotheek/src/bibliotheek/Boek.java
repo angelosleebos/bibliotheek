@@ -42,14 +42,26 @@ public class Boek {
         System.out.println(titel + " van " + auteur.getNaam() + " in het " + taal);
     }
 
+    /**
+     * Methode voor het opvragen van de titel van het boek
+     * @return String titel van het boek
+     */
     public String getTitel() {
         return titel;
     }
 
+    /**
+     * Methode voor het opvragen van de taal van het boek
+     * @return String taal waarin het boek geschreven is
+     */
     public String getTaal() {
         return taal;
     }
 
+    /**
+     * Methode voor het opvragen van de auteur van het boek
+     * @return Auteur geeft een auteur terug
+     */
     public Auteur getAuteur() {
         return auteur;
     }

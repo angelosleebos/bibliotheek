@@ -19,10 +19,18 @@ public class Auteur {
         this.prijs = prijs;
     }
 
+    /**
+     * Methode voor het opvragen van de naam van een auteur
+     * @return String naam van de auteur
+     */
     public String getNaam() {
         return naam;
     }
 
+    /**
+     * methode voor het opvragen van de prijs van een auteur
+     * @return boolean of de auteur een prijs gewonnen heeft
+     */
     public Boolean getPrijs() {
         return prijs;
     }
