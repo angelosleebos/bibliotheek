@@ -10,7 +10,7 @@ public class Bibliotheek {
     private ArrayList<Exemplaar> boekenlijst = new ArrayList<>();
 
     /**
-     * Bibliotheek constructor
+     * Bibliotheek constructor met gegeven naam van de bibliotheek
      * 
      * @param naam van de Bibliotheek
      */
@@ -119,7 +119,7 @@ public class Bibliotheek {
     /**
      * Telt alle exemplaren van een bepaalde boek
      * 
-     * @param boek boek parameter van deze methode wordt een boek object meegegeven
+     * @param boek Boek van deze methode wordt een boek object meegegeven
      * @return int aantal boeken
      */
 

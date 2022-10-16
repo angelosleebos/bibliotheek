@@ -11,9 +11,9 @@ public class Boek {
     /**
      * Constructor voor een nieuw boek object waarvan de Taal bekend is
      * 
-     * @param titel  De titel van het boek
-     * @param taal   De taal van het boek
-     * @param auteur De auteur van het boek
+     * @param titel  String De titel van het boek
+     * @param taal   String De taal van het boek
+     * @param auteur Auteur De auteur van het boek
      */
     public Boek(String titel, String taal, Auteur auteur) {
         this.titel = titel;
@@ -24,8 +24,8 @@ public class Boek {
     /**
      * Constructor voor een nieuw boek waarvan de Taal niet bekend is
      * 
-     * @param titel  De titel van het boek
-     * @param auteur De auteur van het boek
+     * @param titel  String De titel van het boek
+     * @param auteur Auteur De auteur van het boek
      */
     public Boek(String titel, Auteur auteur) {
         this.titel = titel;
@@ -37,13 +37,12 @@ public class Boek {
      * Methode voor het printen van de gegevens van het boek
      */
     public void print() {
-        // Geeft de gegevens van het boek terug
-        // String boekGegevens = titel + " van " + auteur.getNaam() + " in het " + taal;
         System.out.println(titel + " van " + auteur.getNaam() + " in het " + taal);
     }
 
     /**
      * Methode voor het opvragen van de titel van het boek
+     * 
      * @return String titel van het boek
      */
     public String getTitel() {
@@ -52,6 +51,7 @@ public class Boek {
 
     /**
      * Methode voor het opvragen van de taal van het boek
+     * 
      * @return String taal waarin het boek geschreven is
      */
     public String getTaal() {
@@ -60,6 +60,7 @@ public class Boek {
 
     /**
      * Methode voor het opvragen van de auteur van het boek
+     * 
      * @return Auteur geeft een auteur terug
      */
     public Auteur getAuteur() {
